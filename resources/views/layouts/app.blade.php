@@ -19,6 +19,7 @@
 
     <!-- Optional theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/styles.css') }}">
     @yield('styles')
 
     <!-- Scripts -->
@@ -30,6 +31,15 @@
         window.Laravel = <?php echo json_encode([
             'csrfToken' => csrf_token(),
         ]); ?>
+    </script>
+
+    <script type="text/javascript">
+        $(document).ajaxStart(function() {
+          $("#ajax-loading-section").show();
+        });
+        $(document).ajaxStop(function() {
+          $("#ajax-loading-section").hide();
+        });
     </script>
 </head>
 <body>
@@ -91,6 +101,13 @@
                 </div>
             </nav>
         </header>
+        <div id="ajax-loading-section">
+            <div class="loading-overlay"></div>
+            <div class="loading-image">
+                <img src="{{ asset('images/tla-loader.gif') }}">
+                <span class="loading-text"> Loading....</span>
+            </div>
+        </div>
         <div class="container">
             @yield('content')
         </div>
