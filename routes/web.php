@@ -11,6 +11,13 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Auth::routes();
+
+Route::get('/', 'HomeController@index');
+
+Route::get('auth/{provider}', 'Auth\LoginController@redirectToProvider');
+Route::get('auth/{provider}/callback', 'Auth\LoginController@handleProviderCallback');
+
+Route::get('get-tweets', ['uses' => 'TwitterController@index', 'as' => 'twitter.tweets']);
+
+Route::get('twitter/callback', ['as' => 'twitter.callback', 'users' => 'Auth\LoginController@twitterCallback']);
