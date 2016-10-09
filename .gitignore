@@ -10,7 +10,6 @@ node_modules/
 # Laravel 5 & Lumen specific
 bootstrap/cache/
 storage/
-public/.htaccess
 .env.*.php
 .env.php
 
