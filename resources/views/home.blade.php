@@ -5,7 +5,7 @@
     <div class="row">
         <!-- Jumbotron -->
         <div class="jumbotron text-center">
-            <h1>Hello, WhiteBox Studio!</h1>
+            <h1>Hello, WhiteSpace Studio!</h1>
             <p class="lead"></p>
             @if(Auth::check())
                 <p><a class="btn btn-lg btn-success" href="javascript:void(0);" onclick="javascript:getTweets()" role="button">Get Latest Tweets</a></p>
