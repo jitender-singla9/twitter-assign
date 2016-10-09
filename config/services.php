@@ -35,4 +35,10 @@ return [
         'secret' => env('STRIPE_SECRET'),
     ],
 
+    'twitter' => [
+        'client_id' => 'oGAX6FPzz5NJEIy5jCSBerkLY',
+        'client_secret' => 'E9O6ZlZU8AJVnLJ95ADwDW2yOfLUuW50H1QuTrt918FgN5uKSB',
+        'redirect' => 'http://127.0.0.1/twitter-assign/public/auth/twitter/callback',
+    ],
+
 ];
